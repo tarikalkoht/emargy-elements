@@ -1,0 +1,267 @@
+# Copyright (C) 2023 Emargy
+# This file is distributed under the same license as the Emargy Elements package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Emargy Elements 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/emargy-elements\n"
+"POT-Creation-Date: 2023-03-10 12:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: emargy-elements.php:122
+msgid "%1$s requires %2$s to be installed and activated."
+msgstr ""
+
+#: emargy-elements.php:124
+msgid "Emargy Elements"
+msgstr ""
+
+#: emargy-elements.php:125
+msgid "Elementor"
+msgstr ""
+
+#: emargy-elements.php:142
+msgid "%1$s requires %2$s version %3$s or greater."
+msgstr ""
+
+#: includes/class-emargy-elements.php:45
+msgid "Emargy Elements"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:46
+msgid "Timeline Slider"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:86
+msgid "Content"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:94
+msgid "Source"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:105
+msgid "Posts Query"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:107
+msgid "cpt_query"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:114
+#: includes/widgets/class-timeline-slider.php:128
+msgid "Posts Per Page"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:142
+msgid "Order By"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:146
+msgid "Date"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:147
+msgid "Title"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:148
+msgid "Random"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:149
+msgid "Menu Order"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:158
+msgid "Order"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:162
+msgid "ASC"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:163
+msgid "DESC"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:182
+msgid "Play Button Icon"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:198
+#: includes/widgets/class-timeline-slider.php:206
+msgid "Autoplay"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:208
+msgid "Yes"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:209
+msgid "No"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:218
+msgid "Autoplay Speed"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:231
+msgid "Pause on Hover"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:233
+msgid "Yes"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:234
+msgid "No"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:250
+msgid "Slider Style"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:257
+msgid "Slider Height"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:281
+msgid "Background"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:294
+msgid "Padding"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:316
+msgid "Border Radius"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:341
+msgid "Slide Item Style"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:348
+msgid "Spacing Between Slides"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:371
+msgid "Padding"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:393
+msgid "Border Radius"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:415
+msgid "Active Slide Scale"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:438
+msgid "Inactive Slide Opacity"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:467
+msgid "Play Button Style"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:474
+msgid "Size"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:503
+msgid "Normal"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:512
+msgid "Color"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:524
+msgid "Background Color"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:540
+msgid "Hover"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:549
+msgid "Color"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:561
+msgid "Background Color"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:573
+msgid "Hover Animation"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:588
+msgid "Border Radius"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:602
+msgid "Padding"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:620
+msgid "Timeline Style"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:627
+msgid "Bar Height"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:650
+msgid "Bar Color"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:662
+msgid "Margin"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:684
+msgid "Marker Size"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:707
+msgid "Marker Color"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:719
+msgid "Active Marker Color"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:731
+msgid "Slider Handle"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:739
+msgid "Handle Size"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:762
+msgid "Handle Color"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:791
+msgid "Timeline Numbers Style"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:808
+msgid "Color"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:820
+msgid "Active Color"
+msgstr ""
+
+#: includes/widgets/class-timeline-slider.php:832
+msgid "Spacing"
+msgstr ""

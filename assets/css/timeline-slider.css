@@ -1,0 +1,228 @@
+/*
+ * Timeline Slider Widget styles - Updated for Arabic RTL support
+ */
+
+.emargy-timeline-slider {
+    position: relative;
+    width: 100%;
+    min-height: 500px;  /* ارتفاع كافي لاستيعاب كل العناصر */
+    overflow: hidden;
+    --transition-duration: 0.3s;
+    --autoplay-speed: 5000ms;
+    background-color: #e41e3f; /* خلفية حمراء */
+    padding: 20px 0 60px;
+}
+
+/* حاوية الشرائح */
+.emargy-slider-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    padding: 20px 0 60px;  /* زيادة المساحة */
+}
+
+.emargy-slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-duration) ease-out;
+    height: auto;
+}
+
+/* شريحة العرض */
+.emargy-timeline-slide {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    margin: 0 10px;
+    border-radius: 0;
+    height: 80px;
+    width: 80px;
+    flex: 0 0 auto;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/* الشريحة النشطة */
+.emargy-timeline-slide.active {
+    height: 320px;  /* يجب أن يكون أكبر من الحالي */
+    width: 260px;
+    z-index: 2;
+    transform: scale(1.6);
+    transition: transform 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.emargy-slide-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.emargy-slide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* زر التشغيل */
+.emargy-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35px;  /* حجم أصغر للأزرار المصغرة */
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.emargy-play-button i,
+.emargy-play-button svg {
+    color: #fff;
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+}
+
+.emargy-play-button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* زر تشغيل أكبر للشريحة النشطة */
+.emargy-timeline-slide.active .emargy-play-button {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.emargy-timeline-slide.active .emargy-play-button i,
+.emargy-timeline-slide.active .emargy-play-button svg {
+    font-size: 28px;
+    width: 24px;
+    height: 24px;
+}
+
+/* حاوية شريط التايملاين */
+.emargy-timeline-container {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    height: 80px;  /* ارتفاع كافي للشريط والأرقام */
+}
+
+/* شريط التايملاين */
+.emargy-timeline-bar {
+    position: relative;
+    width: 100%;
+    height: 40px;  /* ارتفاع أكبر لاستيعاب الخطوط والمؤشر */
+    background-color: #e41e3f;  /* نفس لون الخلفية */
+    margin-bottom: 30px;
+}
+
+/* إضافة الخطوط الصغيرة على الشريط */
+.emargy-timeline-bar::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.8) 1px,
+        transparent 1px,
+        transparent 6px
+    );
+    top: 0;
+}
+
+/* علامات التايملاين - يمكن إخفاؤها لأن المؤشر العمودي سيحل محلها */
+.emargy-timeline-marker {
+    display: none;
+}
+
+/* مؤشر التايملاين العمودي */
+.emargy-timeline-handle {
+    position: absolute;
+    width: 2px;  /* عرض المؤشر */
+    height: 40px;  /* ارتفاع المؤشر */
+    background-color: white;
+    top: 0;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* إضافة توهج للمؤشر */
+.emargy-timeline-handle::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.4);
+    top: 0;
+    left: -2px;
+}
+
+/* أرقام التايملاين */
+.emargy-timeline-numbers {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.emargy-timeline-number {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    transition: color 0.3s ease;
+    transform: translateX(-50%);
+    font-family: 'Arial', sans-serif;
+    bottom: -50px;  /* موضع أسفل الشريط */
+}
+
+.emargy-timeline-number.active {
+    color: white;
+    font-weight: 700;
+}
+
+/* إخفاء النقاط السفلية - حيث أنها غير موجودة في التصميم المطلوب */
+.emargy-slider-dots {
+    display: none;
+}
+
+/* استجابة للشاشات المختلفة */
+@media (max-width: 767px) {
+    .emargy-timeline-slide.active {
+        height: 200px;
+        width: 180px;
+    }
+    
+    .emargy-timeline-container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 479px) {
+    .emargy-timeline-slide.active {
+        height: 150px;
+        width: 120px;
+    }
+    
+    .emargy-timeline-container {
+        width: 100%;
+    }
+    
+    .emargy-timeline-number {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,19 @@
+/**
+ * Emargy Elements Admin Styles
+ */
+
+ .elementor-panel .elementor-element .icon i.eicon-slider-3d {
+    color: #6A1B9A;
+}
+
+.elementor-control-section_timeline_style .elementor-panel-heading-title,
+.elementor-control-section_timeline_numbers_style .elementor-panel-heading-title {
+    color: #6A1B9A;
+}
+
+/* Custom icon in the editor panel */
+.elementor-element-wrapper i[class*="emargy-"] {
+    font-size: 28px;
+    display: block;
+    margin: 0 auto;
+}
