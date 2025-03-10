@@ -173,6 +173,7 @@
             const slideWidth = $activeSlide.outerWidth(true);
             const slideLeft = $activeSlide.position().left;
             
+            // Calculate center position for the active slide
             const centerOffset = (sliderWidth / 2) - (slideWidth / 2) - slideLeft;
 
             if (animate) {
@@ -183,8 +184,12 @@
             
             this.slidesWrapper.css('transform', `translateX(${centerOffset}px)`);
             
+            // Update active classes
             this.slides.removeClass('active');
             this.slides.eq(index).addClass('active');
+            
+            // Update handle position
+            this.updateHandlePosition(index);
         }
         
         /**

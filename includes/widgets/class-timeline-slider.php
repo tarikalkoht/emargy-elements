@@ -527,7 +527,7 @@ class Timeline_Slider extends Widget_Base {
         $this->add_control(
             'play_button_background',
             [
-'label' => esc_html__( 'Background Color', 'emargy-elements' ),
+                'label' => esc_html__( 'Background Color', 'emargy-elements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => 'rgba(0, 0, 0, 0.5)',
                 'selectors' => [
@@ -659,18 +659,6 @@ class Timeline_Slider extends Widget_Base {
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .emargy-timeline-bar' => 'height: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'timeline_bar_color',
-            [
-                'label' => esc_html__('Timeline Bar Color', 'emargy-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#ffffff',
-                'selectors' => [
-                    '{{WRAPPER}} .emargy-timeline-bar' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
