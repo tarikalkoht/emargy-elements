@@ -882,10 +882,17 @@ class Timeline_Slider extends Widget_Base {
         // Get posts
         $posts = $this->get_posts($post_type, $posts_per_page);
         
-        if ( empty( $posts ) ) {
-            return;
+        // If not enough posts, create dummy placeholders to reach the required number
+        if (count($posts) < $posts_per_page) {
+            $placeholder_count = $posts_per_page - count($posts);
+            for ($i = 0; $i < $placeholder_count; $i++) {
+                $dummy_post = new \stdClass();
+                $dummy_post->ID = -($i + 1); // Negative ID to indicate dummy
+                $dummy_post->post_title = 'Placeholder ' . ($i + 1);
+                $posts[] = $dummy_post;
+            }
         }
-
+        
         $id_int = substr( $this->get_id_int(), 0, 3 );
         
         $this->add_render_attribute( 'timeline_slider', [
@@ -907,8 +914,15 @@ class Timeline_Slider extends Widget_Base {
                     foreach ( $posts as $post ) : 
                         $count++;
                         $active_class = ($count === $active_slide + 1) ? 'active' : '';
-                        $post_thumbnail = get_the_post_thumbnail_url( $post->ID, $settings['thumbnail_size'] );
-                        if ( ! $post_thumbnail ) {
+                        
+                        // Check if this is a real post or a placeholder
+                        if ($post->ID > 0) {
+                            $post_thumbnail = get_the_post_thumbnail_url($post->ID, $settings['thumbnail_size']);
+                        } else {
+                            $post_thumbnail = ''; // No thumbnail for placeholder
+                        }
+                        
+                        if (!$post_thumbnail) {
                             $post_thumbnail = EMARGY_ELEMENTS_ASSETS . 'img/placeholder.jpg';
                         }
                     ?>
