@@ -1,25 +1,25 @@
 /*
- * Timeline Slider Widget styles - Updated for Arabic RTL support
+ * Timeline Slider Widget styles
  */
 
 .emargy-timeline-slider {
     position: relative;
     width: 100%;
-    min-height: 500px;  /* ارتفاع كافي لاستيعاب كل العناصر */
+    min-height: 500px;
     overflow: hidden;
     --transition-duration: 0.3s;
     --autoplay-speed: 5000ms;
-    background-color: #e41e3f; /* خلفية حمراء */
+    background-color: #e41e3f;
     padding: 20px 0 60px;
 }
 
-/* حاوية الشرائح */
+/* Slider container */
 .emargy-slider-container {
     position: relative;
     width: 100%;
     height: auto;
     overflow: visible;
-    padding: 20px 0 60px;  /* زيادة المساحة */
+    padding: 20px 0 60px;
 }
 
 .emargy-slider-wrapper {
@@ -30,7 +30,7 @@
     height: auto;
 }
 
-/* شريحة العرض */
+/* Slide item */
 .emargy-timeline-slide {
     position: relative;
     transition: all 0.3s ease-in-out;
@@ -43,9 +43,9 @@
     opacity: 0.8;
 }
 
-/* الشريحة النشطة */
+/* Active slide */
 .emargy-timeline-slide.active {
-    height: 320px;  /* يجب أن يكون أكبر من الحالي */
+    height: 320px;
     width: 260px;
     z-index: 2;
     transform: scale(1.6);
@@ -67,15 +67,15 @@
     display: block;
 }
 
-/* زر التشغيل */
+/* Play button */
 .emargy-play-button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 35px;  /* حجم أصغر للأزرار المصغرة */
+    width: 35px;
     height: 35px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -93,14 +93,14 @@
 }
 
 .emargy-play-button:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* زر تشغيل أكبر للشريحة النشطة */
+/* Larger play button for active slide */
 .emargy-timeline-slide.active .emargy-play-button {
     width: 70px;
     height: 70px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .emargy-timeline-slide.active .emargy-play-button i,
@@ -110,24 +110,24 @@
     height: 24px;
 }
 
-/* حاوية شريط التايملاين */
+/* Timeline container */
 .emargy-timeline-container {
     position: relative;
     width: 90%;
     margin: 0 auto;
-    height: 80px;  /* ارتفاع كافي للشريط والأرقام */
+    height: 80px;
 }
 
-/* شريط التايملاين */
+/* Timeline bar */
 .emargy-timeline-bar {
     position: relative;
     width: 100%;
-    height: 40px;  /* ارتفاع أكبر لاستيعاب الخطوط والمؤشر */
-    background-color: #e41e3f;  /* نفس لون الخلفية */
+    height: 40px;
+    background-color: #e41e3f;
     margin-bottom: 30px;
 }
 
-/* إضافة الخطوط الصغيرة على الشريط */
+/* Add small lines to the timeline bar */
 .emargy-timeline-bar::before {
     content: "";
     position: absolute;
@@ -143,16 +143,16 @@
     top: 0;
 }
 
-/* علامات التايملاين - يمكن إخفاؤها لأن المؤشر العمودي سيحل محلها */
+/* Hide timeline markers as the vertical indicator will replace them */
 .emargy-timeline-marker {
     display: none;
 }
 
-/* مؤشر التايملاين العمودي */
+/* Vertical timeline indicator */
 .emargy-timeline-handle {
     position: absolute;
-    width: 2px;  /* عرض المؤشر */
-    height: 40px;  /* ارتفاع المؤشر */
+    width: 2px;
+    height: 40px;
     background-color: white;
     top: 0;
     transform: translateX(-50%);
@@ -160,7 +160,7 @@
     z-index: 10;
 }
 
-/* إضافة توهج للمؤشر */
+/* Add glow effect to the indicator */
 .emargy-timeline-handle::after {
     content: "";
     position: absolute;
@@ -171,7 +171,7 @@
     left: -2px;
 }
 
-/* أرقام التايملاين */
+/* Timeline numbers */
 .emargy-timeline-numbers {
     position: relative;
     width: 100%;
@@ -187,7 +187,7 @@
     transition: color 0.3s ease;
     transform: translateX(-50%);
     font-family: 'Arial', sans-serif;
-    bottom: -50px;  /* موضع أسفل الشريط */
+    bottom: -50px;
 }
 
 .emargy-timeline-number.active {
@@ -195,12 +195,12 @@
     font-weight: 700;
 }
 
-/* إخفاء النقاط السفلية - حيث أنها غير موجودة في التصميم المطلوب */
+/* Hide dots as they're not in the design */
 .emargy-slider-dots {
     display: none;
 }
 
-/* استجابة للشاشات المختلفة */
+/* Responsive styles */
 @media (max-width: 767px) {
     .emargy-timeline-slide.active {
         height: 200px;

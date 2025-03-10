@@ -157,10 +157,10 @@
         }
         
         /**
-         * الانتقال إلى شريحة محددة
+         * Go to a specific slide
          * 
-         * @param {number} index - فهرس الشريحة
-         * @param {boolean} animate - ما إذا كان سيتم تحريك الانتقال
+         * @param {number} index - Slide index
+         * @param {boolean} animate - Whether to animate the transition
          */
         goToSlide(index, animate = true) {
             if (index < 0) index = 0;
@@ -168,34 +168,41 @@
             
             this.currentIndex = index;
             
+            // Get all required elements
             const $activeSlide = this.slides.eq(index);
             const sliderWidth = this.slider.width();
             const slideWidth = $activeSlide.outerWidth(true);
             const slideLeft = $activeSlide.position().left;
             
-            // Calculate center position for the active slide
+            // Calculate center position to ensure active slide is centered
             const centerOffset = (sliderWidth / 2) - (slideWidth / 2) - slideLeft;
 
+            // Apply transition
             if (animate) {
                 this.slidesWrapper.css('transition', `transform 0.3s ease-out`);
             } else {
                 this.slidesWrapper.css('transition', 'none');
             }
             
+            // Move slides to center active one
             this.slidesWrapper.css('transform', `translateX(${centerOffset}px)`);
             
             // Update active classes
             this.slides.removeClass('active');
             this.slides.eq(index).addClass('active');
             
+            // Update timeline elements
+            this.numbers.removeClass('active');
+            this.numbers.eq(index).addClass('active');
+            
             // Update handle position
             this.updateHandlePosition(index);
         }
         
         /**
-         * تحديث موضع المؤشر
+         * Update the position of the timeline handle
          * 
-         * @param {number} index - فهرس الشريحة
+         * @param {number} index - Slide index
          */
         updateHandlePosition(index) {
             const position = this.slidesCount > 1 

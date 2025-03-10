@@ -641,29 +641,6 @@ class Timeline_Slider extends Widget_Base {
         );
 
         $this->add_control(
-            'timeline_bar_height',
-            [
-                'label' => esc_html__( 'Timeline Bar Height', 'emargy-elements' ),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => [ 'px' ],
-                'range' => [
-                    'px' => [
-                        'min' => 10,
-                        'max' => 100,
-                        'step' => 1,
-                    ],
-                ],
-                'default' => [
-                    'unit' => 'px',
-                    'size' => 40,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .emargy-timeline-bar' => 'height: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
             'timeline_bar_color',
             [
                 'label' => esc_html__( 'Bar Color', 'emargy-elements' ),
@@ -711,28 +688,6 @@ class Timeline_Slider extends Widget_Base {
                 'default' => [
                     'unit' => 'px',
                     'size' => 10,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .emargy-timeline-marker' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'marker_size',
-            [
-                'label' => esc_html__('Marker Size', 'emargy-elements'),
-                'type' => Controls_Manager::SLIDER,
-                'range' => [
-                    'px' => [
-                        'min' => 5,
-                        'max' => 20,
-                        'step' => 1,
-                    ],
-                ],
-                'default' => [
-                    'unit' => 'px',
-                    'size' => 8,
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .emargy-timeline-marker' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
@@ -919,12 +874,12 @@ class Timeline_Slider extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
         $post_type = $settings['post_type'];
-        $posts_per_page = !empty($settings['posts_per_page']) ? intval($settings['posts_per_page']) : 10;
+        $posts_per_page = !empty($settings['posts_per_page']) ? intval($settings['posts_per_page']) : 11; // Change to 11 for 01-11 numbers
         $autoplay = $settings['autoplay'];
         $autoplay_speed = $settings['autoplay_speed'];
         $pause_on_hover = $settings['pause_on_hover'];
-        $timeline_bar_height = $settings['timeline_bar_height']['size'];
         
+        // Get posts
         $posts = $this->get_posts($post_type, $posts_per_page);
         
         if ( empty( $posts ) ) {
@@ -939,7 +894,6 @@ class Timeline_Slider extends Widget_Base {
             'data-autoplay' => $autoplay,
             'data-autoplay-speed' => $autoplay_speed,
             'data-pause-on-hover' => $pause_on_hover,
-            'data-timeline-bar-height' => $timeline_bar_height,
         ]);
 
         ?>
@@ -973,23 +927,10 @@ class Timeline_Slider extends Widget_Base {
             <div class="emargy-timeline-container">
                 <div class="emargy-timeline-bar">
                     <?php 
-                    $count = 0;
-                    foreach ( $posts as $post ) : 
-                        $count++;
-                        $active_class = ($count === $active_slide + 1) ? 'active' : '';
-                        $position = (($count - 1) / (count($posts) - 1)) * 100;
-                        if ( count($posts) === 1 ) {
-                            $position = 50;
-                        }
+                    // Remove the timeline markers as they're not needed with the vertical indicator
                     ?>
-                        <div class="emargy-timeline-marker <?php echo esc_attr( $active_class ); ?>" 
-                             data-index="<?php echo esc_attr( $count ); ?>" 
-                             style="left: <?php echo esc_attr( $position ); ?>%"></div>
-                    <?php endforeach; ?>
                     
-                    <div class="emargy-timeline-handle" style="left: <?php echo (($active_slide) / (count($posts) - 1)) * 100; ?>%">
-                        <i class="fas fa-play"></i>
-                    </div>
+                    <div class="emargy-timeline-handle" style="left: <?php echo (($active_slide) / (count($posts) - 1)) * 100; ?>%"></div>
                 </div>
                 
                 <div class="emargy-timeline-numbers">
@@ -1013,19 +954,6 @@ class Timeline_Slider extends Widget_Base {
                     <?php endforeach; ?>
                 </div>
             </div>
-
-            <div class="emargy-slider-dots">
-                <?php 
-                $count = 0;
-                foreach ( $posts as $post ) : 
-                    $count++;
-                    $active_class = ($count === $active_slide + 1) ? 'active' : '';
-                ?>
-                    <div class="emargy-slider-dot <?php echo esc_attr( $active_class ); ?>" data-index="<?php echo esc_attr( $count ); ?>"></div>
-                <?php endforeach; ?>
-            </div>
-
-            <div class="selected-count" style="text-align: center; color: white; font-size: 16px; margin-top: 10px;"></div>
         </div>
         <?php
     }
